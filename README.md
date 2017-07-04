@@ -3,15 +3,15 @@ about
 
 The ToDo sample apps are meant to be simple demos of how you can take advantage
 of Bluemix and a database service.  In addition it shows how to take advantage
-of both the [built-in](https://www.ng.bluemix.net/docs/starters/rt_landing.html) and [community buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks) 
+of both the [built-in](https://www.ng.bluemix.net/docs/starters/rt_landing.html) and [community buildpacks](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks)
 to deploy your app using whatever runtime you choose.
 
 The ToDo app is pretty simple, it allows you to add an persist ToDos that you
 need to get done.  As you complete different ToDos you can mark them done and
 eventually delete them from the list.  The ToDos are stored in a database.
 
-All implementations support two different database backends, 
-[Mongo DB](https://www.mongodb.org/) and [Couch DB](http://couchdb.apache.org/) 
+All implementations support two different database backends,
+[Mongo DB](https://www.mongodb.org/) and [Couch DB](http://couchdb.apache.org/)
 via [Cloudant](https://cloudant.com/).  If you want to use Cloudant see the
 section of this README titled "Couch DB and Cloudant".
 
@@ -49,9 +49,9 @@ ToDo's on a per-user basis, etc.
 getting the code
 ================================================================================
 
-To get the code you can just clone the repo.
+To get the code you can just clone the repo. Remember to change "Steveo1259" for your own GitHub username
 
-    git clone git@github.com:IBM-Bluemix/todo-apps.git
+    git clone git@github.com:steveo1259/todo-apps.git
 
 The repository contains a directory for each implementation, and the
 `frontend` directory contains the web resources that are used by each
@@ -62,7 +62,7 @@ implementation.
 running the samples
 ================================================================================
 
-To run the samples on Bluemix you must have signed up for Bluemix and have 
+To run the samples on Bluemix you must have signed up for Bluemix and have
 installed the Cloud Foundry command line tool.  To sign up for Bluemix head to
 [bluemix.net](https://console.ng.bluemix.net/?cm_mmc=Display-GitHubReadMe-_-BluemixSampleApp-Todo-_-Node-Compose-_-BM-DevAd) and register.
 
@@ -78,12 +78,12 @@ same as your IBM ID and password.  You should only need to do this once, the com
 line tool will remember this information.
 
 Most of the projects use build technologies that are specific to the runtime the ToDo
-app is written in to deploy the app to Bluemix (Maven, Rake, Paver, etc).  The assumption 
+app is written in to deploy the app to Bluemix (Maven, Rake, Paver, etc).  The assumption
 is that these are tools developers who are using these runtimes are familiar with.  
 Under the covers they are using the Cloud Foundry command line to deploy the apps.  
 The benefit is that you don't need to remember verbose commands (in most cases) and
 continue to use tools you are comfortable with.  See the individual runtime folders
-(java, node, php, python, sinatra) for more details on how to deploy the various 
+(java, node, php, python, sinatra) for more details on how to deploy the various
 versions.
 
 
@@ -158,7 +158,7 @@ The response should be a 204.
 It will most likely be useful to have a local Mongo DB server for testing
 when adding new implementations.
 
-See the Mongo DB [install instructions](http://docs.mongodb.org/manual/installation/) 
+See the Mongo DB [install instructions](http://docs.mongodb.org/manual/installation/)
 for your platform to install a local Mongo DB server.
 
 ### Couch DB / Cloudant
