@@ -25,10 +25,10 @@ for general instructions regarding this application.
 
 1. If you have not already, [download node.js 6.7.0 or later][download_node_url] and install it on your local machine.
 
-1. Clone the app to your local environment from your terminal using the following command
+1. Clone the app to your local environment from your terminal using the following command. Remember to switch "steveo1259" out for the username of the Git account you forked the todo-apps code into.
 
   ```
-  git clone https://github.com/IBM-Bluemix/todo-apps.git
+  git clone https://github.com/steveo1259/todo-apps.git
   ```
 
 1. `cd` into the `node` folder of this newly created directory
@@ -69,111 +69,6 @@ for general instructions regarding this application.
     ```
     cf push
     ```
-
-## Running the app locally
-
-1. Clone the app to your local environment from your terminal using the following command
-
-  ```
-  git clone https://github.com/IBM-Bluemix/todo-apps.git
-  ```
-
-1. Configure a database
-
-  ### To use Cloudant as database
-
-  1. Create an instance of Cloudant to store the todos
-
-    ```
-    cf create-service cloudantNoSQLDB Lite todo-db
-    ```
-
-  1. Create a set of credentials for this service
-
-    ```
-    cf create-service-key todo-db for-local
-    ```
-
-  1. View the credentials and take note of the `url` value
-
-    ```
-    cf service-key todo-db for-local
-    ```
-
-  1. Create a file name `vcap-local.json` in the `node` directory with the following content:
-
-    ```
-    {
-      "services": {
-        "cloudantNoSQLDB": [
-          {
-            "credentials": {
-              "url":"<URL-FROM-THE-SERVICE-KEY-ABOVE>"
-            },
-            "label": "cloudantNoSQLDB",
-            "plan": "Lite",
-            "name": "todo-db"
-          }
-        ]
-      }
-    }
-    ```
-
-    Replace the url with the value retrieved from the service key.
-
-  ### To use Compose for MongoDB as database
-
-  1. Create an instance of Compose for MongoDB to store the todos
-
-    ```
-    cf create-service compose-for-mongodb Standard todo-db
-    ```
-
-  1. Create a set of credentials for this service
-
-    ```
-    cf create-service-key todo-db for-local
-    ```
-
-  1. View the credentials and take note of the `uri` and `ca_certificate_base64` values
-
-    ```
-    cf service-key todo-db for-local
-    ```
-
-  1. Create a file name `vcap-local.json` in the `node` directory with the following content:
-
-    ```
-    {
-      "services": {
-        "compose-for-mongodb": [
-          {
-            "credentials": {
-              "ca_certificate_base64": "<CERTIFICATE>",
-              "uri": "<URI>"
-            },
-            "label": "compose-for-mongodb",
-            "plan": "Standard",
-            "name": "todo-db"
-          }
-        ]
-      }
-    }
-    ```
-
-    Replace the placeholders with the values retrieved from the service key.
-
-1. Get the application dependencies
-
-  ```
-  npm install
-  ```
-
-1. Start the application
-
-  ```
-  npm start
-  ```
 
 ### Troubleshooting
 
